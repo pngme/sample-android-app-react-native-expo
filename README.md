@@ -5,16 +5,16 @@
 
 This documentation covers how to use the Pngme SDK with React Native.
 
-You can find similar documentation for [Flutter](https://github.com/pngme/sample-android-app-flutter) and [Kotlin](https://github.com/pngme/sample-android-app-kotlin).
+You can find similar documentation for [Flutter](https://github.com/pngme/sample-android-app-flutter), [React Native](https://github.com/pngme/sample-android-app-react-native) and [Kotlin](https://github.com/pngme/sample-android-app-kotlin).
 
 ## Setup
 
 1. The SDK supports Android API version 16+
-1. The SDK enables your app to:
+2. The SDK enables your app to:
    1. Register a mobile phone user with Pngme
-   1. Request SMS permissions from the user using a [Permission Dialog Flow](.docs/permission_flow.gif)
-   1. Periodically send data to Pngme to analyze financial events
-1. Using the SDK requires an **SDK Token**
+   2. Request SMS permissions from the user using a [Permission Dialog Flow](.docs/permission_flow.gif)
+   3. Periodically send data to Pngme to analyze financial events
+3. Using the SDK requires an **SDK Token**
    - [**Sign up for a free Pngme Dashboard account**](https://admin.pngme.com) then access your SDK token from the [Keys page](https://admin.pngme.com/keys)
    - Use the `test` SDK token during development but replace with the `production` SDK token before deploying your app to the Google Play store
 
@@ -51,6 +51,23 @@ PNGME_SDK_TOKEN=XXXXXXXXXX
 ### Step 3
 
 Call the `go()` method in your app where you would like to trigger the [Permission Dialog Flow](.docs/permission_flow.gif).
+
+```ts
+import { go } from "@pngme/react-native-sms-pngme-android";
+const openSDK = async () => {
+  const goParams = {
+    clientKey,
+    firstName: userFirstName,
+    lastName: userLastName,
+    email: userEmail,
+    phoneNumber: userPhone,
+    isKycVerified: kycVerified === "true",
+    companyName,
+    externalId,
+  };
+  const response = await go(goParams);
+};
+```
 
 ## PngmeSDK API
 
@@ -253,7 +270,7 @@ It is advisable that you pre-populate the emulated phone with the SMS _before_ r
 
 1. Open the `more` window in the emulator settings
 2. Navigate to the `phone` section
-3. Set the sender to the string `Stanbic`
+3. Set the sender to the string `Stanbic` or one of the senders from our [supported institutions](https://developers.api.pngme.com/reference/supported-institutions).
 4. Copy/Paste the above same message into the message box
 5. Hit `Send Message`
 
