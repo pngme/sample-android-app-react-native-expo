@@ -5,7 +5,7 @@
 
 This documentation covers how to use the Pngme SDK with React Native.
 
-You can find similar documentation for [Flutter](https://github.com/pngme/sample-android-app-flutter), [React Native](https://github.com/pngme/sample-android-app-react-native) and [Kotlin](https://github.com/pngme/sample-android-app-kotlin).
+You can find similar documentation for [Flutter](https://github.com/pngme/sample-android-app-flutter), [Flutter-Java](https://github.com/pngme/sample-android-app-flutter_java), [Kotlin](https://github.com/pngme/sample-android-app-kotlin) and [React Native](https://github.com/pngme/sample-android-app-react-native).
 
 ## Setup
 
