@@ -32,11 +32,11 @@ Add the SDK package to your `package.json` file.
 
 #### Using Yarn
 
-`yarn add @pngme/react-native-sms-pngme-android@3.2.0`
+`yarn add @pngme/react-native-sms-pngme-android@4.0.2`
 
 #### Using Npm
 
-`npm install @pngme/react-native-sms-pngme-android@3.2.0 --save`
+`npm install @pngme/react-native-sms-pngme-android@4.0.2 --save`
 
 ### Step 2
 
@@ -61,7 +61,6 @@ const openSDK = async () => {
     lastName: userLastName,
     email: userEmail,
     phoneNumber: userPhone,
-    isKycVerified: kycVerified === "true",
     companyName,
     externalId,
   };
@@ -83,7 +82,6 @@ interface PngmeSDKParamType {
   email: string;
   phoneNumber: string;
   externalId: string;
-  isKycVerified: boolean;
   companyName: string;
 }
 ```
@@ -105,7 +103,6 @@ The `go` method performs three tasks.
 | email         | the mobile phone user's email address                                                               |
 | phoneNumber   | the mobile phone user's phone number, example `"23411234567"`                                       |
 | externalId    | a unique identifier for the user provided by your app; if none available, pass an empty string `""` |
-| isKycVerified | a boolean, indicating if your app has verified the user's identity using KYC                        |
 | companyName   | your company's name; this is used in the display header of the permissions UI flow                  |
 
 ### `resetPermissionFlow()`
@@ -193,7 +190,6 @@ const handleContinue = async () => {
       lastName: user.lastName,
       email: user.email,
       phoneNumber: `234${user.phoneNumber}`,
-      isKycVerified: false,
       companyName: "Acme Bank",
       externalId: "",
     });
@@ -234,7 +230,6 @@ const handleContinue = async () => {
       lastName: user.lastName,
       email: user.email,
       phoneNumber: `234${user.phoneNumber}`,
-      isKycVerified: false,
       companyName: "Acme Bank",
       externalId: "",
     });
