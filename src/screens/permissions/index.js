@@ -45,7 +45,6 @@ const Permissions = ({ navigation }) => {
         lastName: user.lastName,
         email: user.email,
         phoneNumber: `234${user.phoneNumber}`,
-        isKycVerified: false,
         companyName: 'Acme Bank',
         externalId: '',
         hidePngmeDialog: false, // if you want to hide the Pngme dialog, set this to true
